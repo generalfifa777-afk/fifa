@@ -5,19 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FIFA | Fortnite Player</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
     background: #020202;
     color: white;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
 }
 
 /* 🔥 HERO */
@@ -27,52 +29,48 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background:
-        radial-gradient(circle at center, #0f172a, #000),
-        linear-gradient(45deg, #00ffe1, transparent);
+    background: radial-gradient(circle at center, #0f172a, #000);
 }
 
 .hero h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 100px;
+    font-family: 'Orbitron';
+    font-size: 110px;
     color: #00ffe1;
-    text-shadow: 0 0 30px #00ffe1;
+    text-shadow: 0 0 40px #00ffe1;
+    animation: glow 2s infinite alternate;
 }
 
 .hero p {
     opacity: 0.7;
 }
 
+@keyframes glow {
+    from { text-shadow: 0 0 10px #00ffe1; }
+    to { text-shadow: 0 0 40px #00ffe1; }
+}
+
 /* 💬 QUOTE */
 .quote {
     text-align: center;
-    padding: 60px;
-    font-size: 22px;
-    font-style: italic;
+    padding: 80px;
+    font-size: 26px;
     opacity: 0.6;
 }
 
 /* 🎬 VIDEO */
 .video-block {
-    position: relative;
-    height: 85vh;
+    height: 90vh;
     margin: 60px 8%;
     border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 0 40px rgba(0,255,225,0.2);
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,255,225,0.2);
 }
 
 .video-block video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.video-block::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
 }
 
 /* 📊 STATS */
@@ -84,9 +82,9 @@ body {
 }
 
 .card {
-    background: rgba(255,255,255,0.03);
-    backdrop-filter: blur(10px);
-    padding: 30px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(15px);
+    padding: 35px;
     border-radius: 20px;
     text-align: center;
     border: 1px solid rgba(255,255,255,0.1);
@@ -94,8 +92,8 @@ body {
 }
 
 .card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 0 20px #00ffe1;
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 30px #00ffe1;
 }
 
 .card h2 {
@@ -105,13 +103,13 @@ body {
 
 /* 🖥 SETUP */
 .setup {
-    padding: 80px 10%;
+    padding: 100px 10%;
     text-align: center;
 }
 
 .setup h2 {
-    font-size: 40px;
     font-family: 'Orbitron';
+    font-size: 40px;
     margin-bottom: 40px;
 }
 
@@ -122,7 +120,7 @@ body {
 }
 
 .setup-card {
-    background: rgba(255,255,255,0.03);
+    background: rgba(255,255,255,0.04);
     padding: 30px;
     border-radius: 20px;
     border: 1px solid rgba(255,255,255,0.1);
@@ -130,8 +128,8 @@ body {
 }
 
 .setup-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 25px #00ffe1;
+    transform: translateY(-10px);
+    box-shadow: 0 0 35px #00ffe1;
 }
 
 .setup-card img {
@@ -140,14 +138,12 @@ body {
     border-radius: 10px;
 }
 
-/* 💰 PRICE */
 .price {
     border: 1px solid #00ffe1;
 }
 
 .price h3 {
     color: #00ffe1;
-    font-size: 26px;
 }
 
 /* 🤝 TEAMMATE */
@@ -161,18 +157,30 @@ body {
 /* 📱 FOOTER */
 .footer {
     text-align: center;
-    padding: 80px;
+    padding: 100px;
 }
 
 .footer a {
     color: #00ffe1;
-    font-size: 24px;
+    font-size: 28px;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .footer a:hover {
-    text-shadow: 0 0 10px #00ffe1;
+    text-shadow: 0 0 20px #00ffe1;
+}
+
+/* ✨ ANIMATION ON SCROLL */
+.fade {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* 📱 MOBILE */
@@ -190,29 +198,28 @@ body {
 }
 
 </style>
-
 </head>
 
 <body>
 
-<section class="hero">
+<section class="hero fade">
     <div>
         <h1>FIFA</h1>
         <p>Best Player on 50 Ping</p>
     </div>
 </section>
 
-<section class="quote">
+<section class="quote fade">
     “пг с каждым, пг с каждым”
 </section>
 
-<section class="video-block">
+<section class="video-block fade">
     <video autoplay muted loop playsinline>
         <source src="clip1.mp4" type="video/mp4">
     </video>
 </section>
 
-<section class="stats">
+<section class="stats fade">
 
     <div class="card">
         <h2>PR</h2>
@@ -236,7 +243,7 @@ body {
 
 </section>
 
-<section class="setup">
+<section class="setup fade">
 
     <h2>Setup</h2>
 
@@ -274,14 +281,28 @@ body {
 
 </section>
 
-<section class="teammate">
+<section class="teammate fade">
     🤝 Last Teammate: mach67bot
 </section>
 
-<section class="footer">
+<section class="footer fade">
     <p>Follow me:</p>
     <a href="#">Falcon fifa!</a>
 </section>
+
+<script>
+const items = document.querySelectorAll('.fade');
+
+const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('show');
+        }
+    });
+});
+
+items.forEach(el => obs.observe(el));
+</script>
 
 </body>
 </html>
