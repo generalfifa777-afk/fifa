@@ -8,44 +8,58 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    background: #050505;
+    background: #020202;
     color: white;
     font-family: 'Inter', sans-serif;
 }
 
-/* HERO */
+/* 🔥 HERO */
 .hero {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: radial-gradient(circle, #0f172a, #000);
+    background:
+        radial-gradient(circle at center, #0f172a, #000),
+        linear-gradient(45deg, #00ffe1, transparent);
 }
 
 .hero h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 90px;
+    font-size: 100px;
     color: #00ffe1;
+    text-shadow: 0 0 30px #00ffe1;
 }
 
-/* QUOTE */
+.hero p {
+    opacity: 0.7;
+}
+
+/* 💬 QUOTE */
 .quote {
     text-align: center;
-    padding: 40px;
+    padding: 60px;
+    font-size: 22px;
     font-style: italic;
     opacity: 0.6;
 }
 
-/* VIDEO */
+/* 🎬 VIDEO */
 .video-block {
     position: relative;
-    height: 80vh;
-    margin: 60px 10%;
-    border-radius: 20px;
+    height: 85vh;
+    margin: 60px 8%;
+    border-radius: 25px;
     overflow: hidden;
+    box-shadow: 0 0 40px rgba(0,255,225,0.2);
 }
 
 .video-block video {
@@ -54,25 +68,34 @@ body {
     object-fit: cover;
 }
 
-/* STATS */
+.video-block::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+/* 📊 STATS */
 .stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 60px 10%;
+    gap: 25px;
+    padding: 80px 10%;
 }
 
 .card {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px);
     padding: 30px;
-    border-radius: 15px;
+    border-radius: 20px;
     text-align: center;
     border: 1px solid rgba(255,255,255,0.1);
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 0 20px #00ffe1;
 }
 
 .card h2 {
@@ -80,69 +103,92 @@ body {
     font-family: 'Orbitron';
 }
 
-/* SETUP */
+/* 🖥 SETUP */
 .setup {
-    padding: 60px 10%;
+    padding: 80px 10%;
     text-align: center;
+}
+
+.setup h2 {
+    font-size: 40px;
+    font-family: 'Orbitron';
+    margin-bottom: 40px;
 }
 
 .setup-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 25px;
 }
 
 .setup-card {
-    background: rgba(255,255,255,0.05);
-    padding: 25px;
-    border-radius: 15px;
+    background: rgba(255,255,255,0.03);
+    padding: 30px;
+    border-radius: 20px;
     border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.4s;
+}
+
+.setup-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px #00ffe1;
 }
 
 .setup-card img {
-    width: 180px;
-    margin-top: 10px;
+    width: 200px;
+    margin-top: 15px;
     border-radius: 10px;
 }
 
+/* 💰 PRICE */
 .price {
     border: 1px solid #00ffe1;
 }
 
 .price h3 {
     color: #00ffe1;
+    font-size: 26px;
 }
 
-/* TEAMMATE */
+/* 🤝 TEAMMATE */
 .teammate {
     text-align: center;
-    padding: 40px;
+    padding: 60px;
+    font-size: 20px;
     opacity: 0.7;
 }
 
-/* FOOTER */
+/* 📱 FOOTER */
 .footer {
     text-align: center;
-    padding: 60px;
+    padding: 80px;
 }
 
 .footer a {
     color: #00ffe1;
-    font-size: 20px;
+    font-size: 24px;
     text-decoration: none;
+    transition: 0.3s;
 }
 
-/* MOBILE */
+.footer a:hover {
+    text-shadow: 0 0 10px #00ffe1;
+}
+
+/* 📱 MOBILE */
 @media (max-width: 768px) {
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
     .stats,
     .setup-grid {
         grid-template-columns: 1fr;
     }
 
-    .hero h1 {
-        font-size: 50px;
-    }
 }
+
 </style>
 
 </head>
