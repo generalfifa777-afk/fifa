@@ -5,196 +5,172 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FIFA | Fortnite Player</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-    background: #020202;
+    background: #010101;
     color: white;
     font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
 }
 
-/* 🔥 HERO */
+/* HERO */
 .hero {
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: radial-gradient(circle at center, #0f172a, #000);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background: radial-gradient(circle, #0f172a, #000);
 }
 
 .hero h1 {
-    font-family: 'Orbitron';
-    font-size: 110px;
-    color: #00ffe1;
-    text-shadow: 0 0 40px #00ffe1;
-    animation: glow 2s infinite alternate;
+    font-family:'Orbitron';
+    font-size:110px;
+    color:#00ffe1;
+    text-shadow:0 0 50px #00ffe1;
 }
 
-.hero p {
-    opacity: 0.7;
-}
+.hero p { opacity:0.7; }
 
-@keyframes glow {
-    from { text-shadow: 0 0 10px #00ffe1; }
-    to { text-shadow: 0 0 40px #00ffe1; }
-}
-
-/* 💬 QUOTE */
+/* QUOTE */
 .quote {
-    text-align: center;
-    padding: 80px;
-    font-size: 26px;
-    opacity: 0.6;
+    text-align:center;
+    padding:80px;
+    font-size:26px;
+    opacity:0.6;
 }
 
-/* 🎬 VIDEO */
+/* VIDEO */
 .video-block {
-    height: 90vh;
-    margin: 60px 8%;
-    border-radius: 25px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 0 50px rgba(0,255,225,0.2);
+    height:90vh;
+    margin:60px 8%;
+    border-radius:25px;
+    overflow:hidden;
+    border:2px solid #00ffe1;
+    box-shadow:0 0 50px #00ffe1;
 }
 
 .video-block video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-/* 📊 STATS */
+/* STATS */
 .stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    padding: 80px 10%;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    padding:80px 10%;
 }
 
 .card {
-    background: rgba(255,255,255,0.04);
-    backdrop-filter: blur(15px);
-    padding: 35px;
-    border-radius: 20px;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: 0.4s;
+    background: linear-gradient(145deg,#0a0a0a,#111);
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    transition:0.4s;
 }
 
 .card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 0 30px #00ffe1;
+    transform:translateY(-10px) scale(1.05);
+    box-shadow:0 0 30px #00ffe1;
 }
 
 .card h2 {
-    color: #00ffe1;
-    font-family: 'Orbitron';
+    color:#00ffe1;
+    font-family:'Orbitron';
 }
 
-/* 🖥 SETUP */
+/* SETUP */
 .setup {
-    padding: 100px 10%;
-    text-align: center;
+    padding:100px 10%;
+    text-align:center;
 }
 
 .setup h2 {
-    font-family: 'Orbitron';
-    font-size: 40px;
-    margin-bottom: 40px;
+    font-size:40px;
+    font-family:'Orbitron';
+    margin-bottom:40px;
 }
 
 .setup-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
 }
 
 .setup-card {
-    background: rgba(255,255,255,0.04);
-    padding: 30px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: 0.4s;
+    background: linear-gradient(145deg,#0a0a0a,#111);
+    padding:30px;
+    border-radius:20px;
+    transition:0.4s;
 }
 
 .setup-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 35px #00ffe1;
+    transform:translateY(-10px);
+    box-shadow:0 0 35px #00ffe1;
 }
 
 .setup-card img {
-    width: 200px;
-    margin-top: 15px;
-    border-radius: 10px;
+    width:200px;
+    margin-top:15px;
+    border-radius:10px;
+    transition:0.3s;
 }
 
+.setup-card img:hover {
+    transform:scale(1.1);
+    box-shadow:0 0 25px #00ffe1;
+}
+
+/* PRICE */
 .price {
-    border: 1px solid #00ffe1;
+    border:2px solid #00ffe1;
 }
 
-.price h3 {
-    color: #00ffe1;
-}
+.price h3 { color:#00ffe1; }
 
-/* 🤝 TEAMMATE */
+/* TEAMMATE */
 .teammate {
-    text-align: center;
-    padding: 60px;
-    font-size: 20px;
-    opacity: 0.7;
+    text-align:center;
+    padding:60px;
+    font-size:20px;
+    opacity:0.7;
 }
 
-/* 📱 FOOTER */
+/* BUTTON */
+.btn {
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 30px;
+    border:2px solid #00ffe1;
+    color:#00ffe1;
+    text-decoration:none;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.btn:hover {
+    background:#00ffe1;
+    color:black;
+    box-shadow:0 0 20px #00ffe1;
+}
+
+/* FOOTER */
 .footer {
-    text-align: center;
-    padding: 100px;
+    text-align:center;
+    padding:100px;
 }
 
-.footer a {
-    color: #00ffe1;
-    font-size: 28px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer a:hover {
-    text-shadow: 0 0 20px #00ffe1;
-}
-
-/* ✨ ANIMATION ON SCROLL */
-.fade {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: 1s;
-}
-
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* 📱 MOBILE */
-@media (max-width: 768px) {
-
-    .hero h1 {
-        font-size: 50px;
-    }
-
-    .stats,
-    .setup-grid {
-        grid-template-columns: 1fr;
-    }
-
+/* MOBILE */
+@media(max-width:768px){
+    .hero h1 { font-size:50px; }
+    .stats, .setup-grid { grid-template-columns:1fr; }
 }
 
 </style>
@@ -202,24 +178,24 @@ body {
 
 <body>
 
-<section class="hero fade">
+<section class="hero">
     <div>
         <h1>FIFA</h1>
         <p>Best Player on 50 Ping</p>
     </div>
 </section>
 
-<section class="quote fade">
+<section class="quote">
     “пг с каждым, пг с каждым”
 </section>
 
-<section class="video-block fade">
+<section class="video-block">
     <video autoplay muted loop playsinline>
         <source src="clip1.mp4" type="video/mp4">
     </video>
 </section>
 
-<section class="stats fade">
+<section class="stats">
 
     <div class="card">
         <h2>PR</h2>
@@ -243,7 +219,7 @@ body {
 
 </section>
 
-<section class="setup fade">
+<section class="setup">
 
     <h2>Setup</h2>
 
@@ -281,28 +257,13 @@ body {
 
 </section>
 
-<section class="teammate fade">
+<section class="teammate">
     🤝 Last Teammate: mach67bot
 </section>
 
-<section class="footer fade">
-    <p>Follow me:</p>
-    <a href="#">Falcon fifa!</a>
+<section class="footer">
+    <a href="#" class="btn">Follow Falcon fifa!</a>
 </section>
-
-<script>
-const items = document.querySelectorAll('.fade');
-
-const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-        if (e.isIntersecting) {
-            e.target.classList.add('show');
-        }
-    });
-});
-
-items.forEach(el => obs.observe(el));
-</script>
 
 </body>
 </html>
